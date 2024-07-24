@@ -129,7 +129,7 @@ func main() {
 		}
 	}
 	totalDifference := totalOrigSize - totalNewSize
-	totalDifferencePercent := float64(totalOrigSize) / float64(totalNewSize)
+	totalDifferencePercent := -(float64(totalNewSize) - float64(totalOrigSize)) / float64(totalOrigSize) * 100
 	filesTable.Row("Total", convertBytes(totalOrigSize), convertBytes(totalNewSize), convertBytes(totalDifference)+fmt.Sprintf(" (%.1f %%)", totalDifferencePercent))
 
 	fmt.Println(filesTable.Render())
